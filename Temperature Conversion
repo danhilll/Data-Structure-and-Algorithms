@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+void displayMenu() {
+    cout << "Enter your choice (1-2): ";
+}
+
+double CTOF(double celsius) {
+    return (celsius * 9 / 5) + 32;
+}
+
+double FTOC(double fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9;
+}
+
+int main() {
+    int choice;
+    double temperature;
+
+    do {
+        displayMenu();
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                cout << "Enter temp in Celsius: ";
+                cin >> temperature;
+                cout << "Temp in Fahrenheit: " << CTOF(temperature) << " F" << endl;
+                break;
+            case 2:
+                cout << "Enter temp in Fahrenheit: ";
+                cin >> temperature;
+                cout << "Temp in Celsius: " << FTOC(temperature) << " C" << endl;
+                break;
+
+        }
+
+        cout << endl;
+
+    } while (choice != 2);
+
+    return 0;
+}
